@@ -3,4 +3,4 @@ window.onload = setTimeout(function() {
  
   // Add .loaded to .loading
   spinner.classList.add('loaded');
-}, 5000);
+}, 1500);
