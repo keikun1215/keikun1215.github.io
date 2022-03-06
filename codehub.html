@@ -9,11 +9,18 @@ const db = new Dexie("SocialDB");
 
 db.version(1)
   .stores({
-    codeinfo: "title,code"  // 一番最初に来るtitleがキー。codeがインデックス。
+    codeinfo: "title,code"  // 一番最初に来るtitleが名前。codeが内容。
   });
     </script>
+    <style>
+.code {
+    font-family: "" serif;
+}
+    </style>
   </head>
   <body>
-    <input>
+    <div class="codeblock">
+    <input type="text" />
+    </div>
   </body>
 </html>
