@@ -2,5 +2,5 @@ window.onload = function() {
   const spinner = document.getElementById('loading');
  
   // Add .loaded to .loading
-  setTimeout(function(){spinner.classList.add('loaded')}, 1500);
-}
+  setTimeout(function(){spinner.classList.add('loaded');}, 1500);
+};
