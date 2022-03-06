@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> codehub </title>
+    <meta charset="utf-8">
+    <script src="https://unpkg.com/dexie@3.0.2/dist/dexie.min.js"></script>
+        <script>
+const db = new Dexie("SocialDB");
+
+db.version(1)
+  .stores({
+    codeinfo: "title,code"  // 一番最初に来るnameがキー。ageがインデックス。
+  });
+    </script>
+  </head>
+  <body>
+    <input>
+  </body>
+</html>
