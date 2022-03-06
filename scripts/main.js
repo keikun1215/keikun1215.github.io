@@ -1,6 +1,4 @@
-window.onload = function() {
-  const spinner = document.getElementById('loading');
- 
-  // Add .loaded to .loading
-  setTimeout(function(){spinner.classList.add('loaded');}, 1500);
-};
+window.onload = ()=>{
+    const loader = document.getElementById('loader');
+    loader.classList.add('loaded');
+}
