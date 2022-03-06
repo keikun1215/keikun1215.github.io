@@ -4,6 +4,8 @@
     <title> codehub </title>
     <meta charset="utf-8">
     <script src="https://unpkg.com/dexie@3.0.2/dist/dexie.min.js"></script>
+    <script src="./prism.js"></script>
+    <link rel="text/css" src="./prism.css">
         <script>
       
 const db = new Dexie("SocialDB");
@@ -22,8 +24,14 @@ db.version(1)
     <script type="text/javascript" src="//google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
   </head>
   <body>
-    <div class="codeblock">
+    <pre class="line-numbers">
+	<code class="language-js">
     <input type="text" />
+    const a = 'a'
+    console.log(a)
+    //a
+    </code>
+    </pre>
     </div>
   </body>
 </html>
