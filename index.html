@@ -25,7 +25,12 @@
     background-color: #00c2bc;
 }
     </style>
-    <script type="text/javascript" src="./main.js"></script>
+    <script type="text/javascript">
+      window.onload = ()=>{
+    const loader = document.getElementById('loader');
+    loader.classList.add('loaded');
+}
+    </script>
     <link rel="text/css" src="./main.css">
   </head>
   <body>
