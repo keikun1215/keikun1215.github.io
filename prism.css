@@ -1,7 +1,7 @@
 /* PrismJS 1.27.0
 https://prismjs.com/download.html#themes=prism-dark&languages=markup+css+clike+javascript+c+csharp+cpp+json+json5&plugins=line-highlight+line-numbers+toolbar+copy-to-clipboard+download-button */
 
-code[class*=language-], pre[class*=language-] {
+.codeblock {
   color: #fff;
   background: 0 0;
   text-shadow: 0 -.1em .2em #000;
@@ -23,16 +23,16 @@ code[class*=language-], pre[class*=language-] {
 }
 
 @media print {
-  code[class*=language-], pre[class*=language-] {
+  .codeblock {
     text-shadow: none
   }
 }
 
-:not(pre)>code[class*=language-], pre[class*=language-] {
+.codeblock {
   background: #4c3f33
 }
 
-pre[class*=language-] {
+.codeblock {
   padding: 1em;
   margin: .5em 0;
   overflow: auto;
@@ -41,7 +41,7 @@ pre[class*=language-] {
   box-shadow: 1px 1px .5em #000 inset
 }
 
-:not(pre)>code[class*=language-] {
+.codeblock {
   padding: .15em .2em .05em;
   border-radius: .3em;
   border: .13em solid #7a6651;
@@ -97,7 +97,7 @@ pre[class*=language-] {
   color: red
 }
 
-pre[data-line] {
+.codeblock {
   position: relative;
   padding: 1em 0 1em 3em
 }
@@ -149,25 +149,25 @@ pre[data-line] {
   content: none
 }
 
-pre[id].linkable-line-numbers span.line-numbers-rows {
+.codeblock.linkable-line-numbers span.line-numbers-rows {
   pointer-events: all
 }
 
-pre[id].linkable-line-numbers span.line-numbers-rows>span:before {
+.codeblock.linkable-line-numbers span.line-numbers-rows>span:before {
   cursor: pointer
 }
 
-pre[id].linkable-line-numbers span.line-numbers-rows>span:hover:before {
+.codeblock.linkable-line-numbers span.line-numbers-rows>span:hover:before {
   background-color: rgba(128, 128, 128, .2)
 }
 
-pre[class*=language-].line-numbers {
+.codeblock.line-numbers {
   position: relative;
   padding-left: 3.8em;
   counter-reset: linenumber
 }
 
-pre[class*=language-].line-numbers>code {
+.codeblock.line-numbers>code {
   position: relative;
   white-space: inherit
 }
